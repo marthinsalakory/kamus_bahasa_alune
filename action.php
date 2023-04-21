@@ -61,5 +61,52 @@ if (isset($_POST['cari'])) {
     die;
 }
 
+if (isset($_POST['otomatis_indonesia'])) {
+    $post = $_POST['otomatis_indonesia'];
+    $post = nl2br($post);
+    $post = preg_split('/<br[^>]*>/i', $post);
+    $post = implode(' ', $post);
+    $post = explode(' ', $post);
+    $kalimat = $_POST['otomatis_indonesia'];
+    foreach ($post as $kata) {
+        if (db_count('kata', ['indonesia' => preg_replace("/[^a-zA-Z0-9]/", "", trim($kata))])) {
+            $kalimat = preg_replace("/\b" . preg_replace("/[^a-zA-Z0-9]/", "", trim($kata)) . "\b/", db_find('kata', ['indonesia' => preg_replace("/[^a-zA-Z0-9]/", "", trim($kata))])->alune, $kalimat);
+        }
+    }
+    echo nl2br($kalimat);
+    die;
+}
 
-redirect_back();
+if (isset($_POST['otomatis_alune'])) {
+    $post = $_POST['otomatis_alune'];
+    $post = nl2br($post);
+    $post = preg_split('/<br[^>]*>/i', $post);
+    $post = implode(' ', $post);
+    $post = explode(' ', $post);
+    $kalimat = $_POST['otomatis_alune'];
+    foreach ($post as $kata) {
+        if (db_count('kata', ['alune' => preg_replace("/[^a-zA-Z0-9]/", "", trim($kata))])) {
+            $kalimat = preg_replace("/\b" . preg_replace("/[^a-zA-Z0-9]/", "", trim($kata)) . "\b/", db_find('kata', ['alune' => preg_replace("/[^a-zA-Z0-9]/", "", trim($kata))])->indonesia, $kalimat);
+        }
+    }
+    echo nl2br($kalimat);
+    die;
+}
+
+// if (isset($_POST['otomatis_indonesia'])) {
+//     $post = $_POST['otomatis_indonesia'];
+//     $post = nl2br($post);
+//     $kalimat = '';
+//     foreach (preg_split('/<br[^>]*>/i', $post) as $baris) {
+//         foreach (explode(' ', $baris) as $b) {
+//             if (db_count('kata', ['indonesia' => trim($b)])) {
+//                 $kalimat = $kalimat . ' ' . db_find('kata', ['indonesia' => trim($b)])->alune;
+//             } else {
+//                 $kalimat = $kalimat . ' ' . trim($b);
+//             }
+//         }
+//         $kalimat = $kalimat . '<br>';
+//     }
+//     echo nl2br($kalimat);
+//     die;
+// }

@@ -12,6 +12,34 @@ function db_query($query)
     return mysqli_query(db_conn(), $query);
 }
 
+function db_find($table, $where)
+{
+    foreach ($where as $key => $val) {
+        if (isset($result)) {
+            $result = $result . ' && ' . $key .  ' = \'' . $val . '\'';
+        } else {
+            $result = $key .  ' = \'' . $val . '\'';
+        }
+    }
+    return db_query("SELECT * FROM `$table` WHERE $result")->fetch_object();
+}
+
+function db_count($table, $array = null)
+{
+    if ($array != null) {
+        foreach ($array as $key => $val) {
+            if (isset($result)) {
+                $result = $result . ' && ' . $key .  ' = \'' . $val . '\'';
+            } else {
+                $result = $key .  ' = \'' . $val . '\'';
+            }
+        }
+    } else {
+        $result = 1;
+    }
+    return db_query("SELECT * FROM `$table` WHERE $result")->num_rows;
+}
+
 function redirect($url)
 {
     header("Location: " . $url);

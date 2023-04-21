@@ -10,29 +10,23 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li class="dropdown"><a href="#"><span>Kata</span> <i class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Terjemahkan Otomatis</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto <?= $nav_on == 'kata-indonesia' ? 'active' : ''; ?>" href="kata-indonesia.php">INDONESIA - ALUNE</a></li>
-                        <li><a class="nav-link scrollto <?= $nav_on == 'kata-alune' ? 'active' : ''; ?>" href="kata-alune.php">ALUNE - INDONESIA</a></li>
+                        <li><a class="nav-link scrollto <?= $nav_on == 'otomatis-indonesia' ? 'active' : ''; ?>" href="otomatis-indonesia.php">INDONESIA - ALUNE</a></li>
+                        <li><a class="nav-link scrollto <?= $nav_on == 'otomatis-alune' ? 'active' : ''; ?>" href="otomatis-alune.php">ALUNE - INDONESIA</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Kalimat</span> <i class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Terjemahkan Manual</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a class="nav-link scrollto <?= $nav_on == 'kalimat-indonesia' ? 'active' : ''; ?>" href="kalimat-indonesia.php">INDONESIA - ALUNE</a></li>
-                        <li><a class="nav-link scrollto <?= $nav_on == 'kalimat-alune' ? 'active' : ''; ?>" href="kalimat-alune.php">ALUNE - INDONESIA</a></li>
+                        <li><a class="nav-link scrollto <?= $nav_on == 'manual-indonesia' ? 'active' : ''; ?>" href="manual-indonesia.php">INDONESIA - ALUNE</a></li>
+                        <li><a class="nav-link scrollto <?= $nav_on == 'manual-alune' ? 'active' : ''; ?>" href="manual-alune.php">ALUNE - INDONESIA</a></li>
                     </ul>
                 </li>
                 <?php if (isLogin()) : ?>
                     <li class="dropdown"><a href="#"><span>DATABASE</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a class="nav-link scrollto <?= $nav_on == 'database-kata' ? 'active' : ''; ?>" href="database-kata.php">KATA</a></li>
-                            <li><a class="nav-link scrollto <?= $nav_on == 'database-kalimat' ? 'active' : ''; ?>" href="database-kalimat.php">KALIMAT</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>TAMBAH DATA</span> <i class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a class="nav-link scrollto <?= $nav_on == 'tambah-kata' ? 'active' : ''; ?>" href="tambah-kata.php">KATA</a></li>
-                            <li><a class="nav-link scrollto <?= $nav_on == 'tambah-kalimat' ? 'active' : ''; ?>" href="tambah-kalimat.php">KALIMAT</a></li>
+                            <li><a class="nav-link scrollto <?= $nav_on == 'database-kata' ? 'active' : ''; ?>" href="database-kata.php">LIHAT DATA</a></li>
+                            <li><a class="nav-link scrollto <?= $nav_on == 'database-kalimat' ? 'active' : ''; ?>" href="tambah-kata.php">TAMBAH</a></li>
                         </ul>
                     </li>
                 <?php endif; ?>
@@ -55,8 +49,8 @@
     <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="modal-loginLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modal-loginLabel">Masuk</h1>
+                <div class="modal-header bg-primary">
+                    <h1 class="modal-title fs-5 text-light" id="modal-loginLabel">Masuk</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

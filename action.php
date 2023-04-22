@@ -23,6 +23,32 @@ if (isset($_POST['tambah_kata'])) {
     }
 }
 
+if (isset($_POST['edit_kata'])) {
+    $indonesia = strtolower($_POST['indonesia']);
+    $alune = strtolower($_POST['alune']);
+    $id = strtolower($_POST['id']);
+
+    if (db_query("UPDATE `kata` SET `indonesia`='$indonesia',`alune`='$alune' WHERE `id` = $id")) {
+        setBerhasil("Berhasil mengubah data");
+        redirect_back();
+    } else {
+        setGagal("Gagal mengubah data");
+        redirect_back();
+    }
+}
+
+if (isset($_GET['hapus_kata'])) {
+    $id = strtolower($_GET['hapus_kata']);
+
+    if (db_query("DELETE FROM `kata` WHERE `id` = $id")) {
+        setBerhasil("Berhasil menghapus data");
+        redirect_back();
+    } else {
+        setGagal("Gagal menghapus data");
+        redirect_back();
+    }
+}
+
 if (isset($_POST['tambah_kalimat'])) {
     $indonesia = strtolower($_POST['indonesia']);
     $alune = strtolower($_POST['alune']);

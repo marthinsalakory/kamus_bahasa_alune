@@ -3,20 +3,20 @@
 <?php include 'navbar.php' ?>
 <main id="main">
 
-    <section id="about" class="about">
+    <section>
         <div class="container">
-            <div class="row mt-5 text-center">
+            <div class="row text-center">
                 <h3 class="fw-bold">TERJEMAHAN OTOMATIS</h3>
                 <h3 class="fw-bold">ALUNE - INDONESIA</h3>
             </div>
 
             <div class="row">
                 <div class="row">
-                    <div class="col-6">
-                        <textarea style="resize: none;" class="form-control disable-height" name="alune" id="alune" rows="8" placeholder="Masukan Bahasa Alune"></textarea>
+                    <div class="col-lg-6">
+                        <textarea style="resize: none;" class="form-control disable-height" id="alune" rows="4" placeholder="Masukan Bahasa Alune"></textarea>
                     </div>
-                    <div class="col-6 mt-1">
-                        <div class="border border-2 p-2" style="min-height: 200px;" id="indonesia">Hasil Terjemahan Indonesia</div>
+                    <div class="col-lg-6 mt-1">
+                        <div class="border border-2 p-2" style="min-height: 105px;" id="indonesia">Hasil Terjemahan Indonesia</div>
                     </div>
                 </div>
             </div>

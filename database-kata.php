@@ -4,7 +4,7 @@
 
     <section id="about" class="about">
         <div class="container">
-            <div class="row mt-5 text-center">
+            <div class="row text-center">
                 <h3 class="fw-bold">DATABASE KATA</h3>
             </div>
 
@@ -15,6 +15,7 @@
                             <tr>
                                 <th><input class="form-control text-center" placeholder="Cari kata Indonesia" type="text" id="cari_indonesia"></th>
                                 <th><input class="form-control text-center" placeholder="Cari kata Alune" type="text" id="cari_alune"></th>
+                                <th class="text-center" rowspan="2">Aksi</th>
                             </tr>
                             <tr>
                                 <th class="text-center">Indonesia</th>
@@ -26,6 +27,10 @@
                                 <tr>
                                     <td class="text-center"><?= $k['indonesia']; ?></td>
                                     <td class="text-center"><?= $k['alune']; ?></td>
+                                    <td class="text-center">
+                                        <a href="edit-kata.php?id=<?= $k['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a onclick="return confirm('Yakin?')" href="action.php?hapus_kata=<?= $k['id']; ?>" class="btn btn-danger btn-sm">Hapus</a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

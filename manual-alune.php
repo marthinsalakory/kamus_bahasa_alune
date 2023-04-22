@@ -5,7 +5,7 @@
 
     <section id="about" class="about">
         <div class="container">
-            <div class="row mt-5 text-center">
+            <div class="row text-center">
                 <h3 class="fw-bold">TERJEMAHAN</h3>
                 <h3 class="fw-bold">ALUNE - INDONESIA</h3>
             </div>
@@ -21,6 +21,12 @@
                     <div class="col-12 mt-1">
                         <div class="border border-2 p-2" id="indonesia" style="height: 200px;">Hasil Terjemahan</div>
                     </div>
+                    <div class="col-6 text-end text-break">
+                        <p id="waktu_awal" class="text-primary"></p>
+                    </div>
+                    <div class="col-6 text-start">
+                        <p id="waktu_akhir" class="text-danger"></p>
+                    </div>
                     <div class="col-12 text-center">
                         <p id="waktu"></p>
                     </div>
@@ -34,9 +40,6 @@
 <script>
     var startTime, EndTime;
     $("#cari").on('click', function() {
-
-
-        // $('#alune').html(nl2br($(this).val()));
         $.ajax({
             url: 'action.php',
             data: {
@@ -44,14 +47,16 @@
             },
             method: 'post',
             beforeSend: function() {
-                startTime = Date.now();
+                startTime = new Date();
+                $('#waktu_awal').text("Pencarian dimulai pada: " + startTime.toLocaleTimeString());
             },
             success: function(e) {
                 $('#indonesia').html(e);
             },
             complete: function() {
-                endTime = Date.now();
+                endTime = new Date();
                 var elapsedTime = (endTime - startTime) / 1000;
+                $('#waktu_akhir').text("Pencarian selesai pada: " + endTime.toLocaleTimeString());
                 $('#waktu').text("Lama Pencarian : " + elapsedTime + " Detik");
             }
         });

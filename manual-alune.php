@@ -4,7 +4,7 @@
 <main id="main">
 
     <section id="about" class="about">
-        <div class="container">
+        <div class="container mt-5">
             <div class="row text-center">
                 <h3 class="fw-bold">TERJEMAHAN</h3>
                 <h3 class="fw-bold">ALUNE - INDONESIA</h3>
@@ -18,7 +18,7 @@
                             <button class="btn btn-primary" id="cari" type="button"><i class="fa fa-search"></i> Terjemahkan</button>
                         </div>
                     </div>
-                    <div class="col-12 mt-1">
+                    <div class="col-12 mt-1 text-break">
                         <div class="border border-2 p-2" id="indonesia" style="height: 200px;">Hasil Terjemahan</div>
                     </div>
                     <div class="col-6 text-end text-break">

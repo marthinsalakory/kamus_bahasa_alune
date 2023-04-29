@@ -21,7 +21,7 @@
                     <div class="col-12 mt-1 text-break">
                         <div class="border border-2 p-2" id="indonesia" style="height: 200px;">Hasil Terjemahan</div>
                     </div>
-                    <div class="col-6 text-end text-break">
+                    <div class="col-6 text-end">
                         <p id="waktu_awal" class="text-primary"></p>
                     </div>
                     <div class="col-6 text-start">

@@ -24,7 +24,7 @@
                     <div class="col-6 text-end">
                         <p id="waktu_awal" class="text-primary"></p>
                     </div>
-                    <div class="col-6 text-start text-break">
+                    <div class="col-6 text-start">
                         <p id="waktu_akhir" class="text-danger"></p>
                     </div>
                     <div class="col-12 text-center">
